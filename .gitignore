@@ -1,0 +1,21 @@
+# Cache and temp files
+cache/
+__pycache__/
+*.pyc
+*.pyo
+
+# Chrome profile (contains session data)
+# Note: cookies file is in cache/ which is already ignored
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+
+# Python
+*.egg-info/
+dist/
+build/

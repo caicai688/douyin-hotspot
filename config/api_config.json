@@ -1,0 +1,48 @@
+{
+  "primary": {
+    "name": "istero",
+    "base_url": "https://api.istero.com/resource/v1/douyin/top",
+    "method": "GET",
+    "auth_type": "bearer",
+    "token": "HBicsYfeRqRxPmJYfbesISrxlBpXzgai",
+    "daily_limit": 100,
+    "response_mapping": {
+      "rank_field": "rank",
+      "title_field": "title",
+      "hot_field": "hot",
+      "url_field": "url"
+    }
+  },
+  "fallback_1": {
+    "name": "xxapi",
+    "base_url": "https://v2.xxapi.cn/api/douyinhot",
+    "method": "GET",
+    "auth_type": "none",
+    "qps_limit": 50,
+    "response_mapping": {
+      "rank_field": "position",
+      "title_field": "word",
+      "hot_field": "hot_value",
+      "url_field": null,
+      "cover_field": "word_cover",
+      "video_count_field": "video_count"
+    }
+  },
+  "fallback_2": {
+    "name": "tenapi",
+    "base_url": "https://tenapi.cn/v2/douyinhot",
+    "method": "GET",
+    "auth_type": "none",
+    "response_mapping": {
+      "rank_field": null,
+      "title_field": "name",
+      "hot_field": "hot",
+      "url_field": "url"
+    }
+  },
+  "cache": {
+    "enabled": true,
+    "ttl_minutes": 30,
+    "cache_dir": "cache/daily"
+  }
+}
